@@ -23,8 +23,8 @@ namespace IF_PRACTICE.Controllers
         /// <example>
         ///     GET : /api/IfPractice/Sum/10/100/10      ->      120
         /// </example>
-        [Route("api/IfPractice/Sum/{num1}/{num2}/{num3}")]
         [HttpGet]
+        [Route("api/IfPractice/Sum/{num1}/{num2}/{num3}")]
         public int Sum(int num1, int num2, int num3)
         {
             int sum = num1 + num2 + num3;
@@ -46,8 +46,8 @@ namespace IF_PRACTICE.Controllers
         /// <example>
         /// GET : /api/IfPractice/Product/0/10/20        ->      0
         /// </example>
-        [Route("api/IfPractice/Product/{product1}/{product2}/{product3}")]
         [HttpGet]
+        [Route("api/IfPractice/Product/{product1}/{product2}/{product3}")]
         public int Product(int product1, int product2, int product3)
         {
             int product = product1 * product2 * product3;
