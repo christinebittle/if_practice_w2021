@@ -286,7 +286,7 @@ namespace IF_PRACTICE.Controllers
                 bool isLineDiagonal = !isLineVertical && !isLineHorizontal;
 
                 //i.e. is the sign in front of x1 and x2 different? (x1>0 and x2<0) or (x1<0 and x2>0)
-                bool isXOpposite = (x1 < 0 && x2 < 0) || (x1 < 0 && x2 > 0);
+                bool isXOpposite = (x1 > 0 && x2 < 0) || (x1 < 0 && x2 > 0);
                 //i.e. is the sign in front of y1 and y2 different? (y1>0 and y2<0) or (y1<0 and y2>0)
                 bool isYOpposite = (y1 > 0 && y2 < 0) || (y1 < 0 && y2 > 0);
 
@@ -297,6 +297,7 @@ namespace IF_PRACTICE.Controllers
                 // Line is horizontal
                 if (isLineHorizontal)
                 {
+                    Debug.WriteLine("Line is Horizontal");
                     //Does the line travel on exactly the x-axis?
                     if (y1 == 0 && y2 == 0)
                     {
@@ -323,6 +324,7 @@ namespace IF_PRACTICE.Controllers
                 //Line is vertical
                 if (isLineVertical)
                 {
+                    Debug.WriteLine("Line is Vertical.");
                     //Does the line travel on exactly the x-axis?
                     if (x1 == 0 && x2 == 0)
                     {
@@ -349,6 +351,7 @@ namespace IF_PRACTICE.Controllers
                 //Line must be diagonal.
                 else
                 {
+                    Debug.WriteLine("Line is Diagonal");
                     // only compute slope if you know the line is diagonal!
                     // we know y2!=y1 and x2!=x1 so this will always produce a positive or negative number.
                     decimal slope = (y2 - y1) / (x2 - x1);
@@ -376,6 +379,7 @@ namespace IF_PRACTICE.Controllers
                     // note: you could also use the "PointQuadrant" method here and compare the quadrants of each point.
                     else if (!isXOpposite && !isYOpposite)
                     {
+                        Debug.WriteLine("both points are 'same' quadrant");
                         totalQuadrants = 1;
                         //return totalQuadrants;
                     }
