@@ -74,7 +74,11 @@ namespace IF_PRACTICE.Controllers
         public bool ValidTriangle(decimal angle1, decimal angle2, decimal angle3)
         {
             bool isValidTriangle;
-            if (angle1 <= 0 || angle2 <= 0 || angle3 <= 0) isValidTriangle = false;
+            if (angle1 <= 0 || angle2 <= 0 || angle3 <= 0)
+            {
+                isValidTriangle = false;
+                return isValidTriangle;
+            }
             decimal sum = angle1 + angle2 + angle3;
 
             if (sum == 180) isValidTriangle = true;
