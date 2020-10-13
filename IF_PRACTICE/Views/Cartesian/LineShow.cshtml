@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "LineShow";
+}
+
+<h2>LineShow</h2>
+
+<section id="cartesiancontainer">
+    <div id="cartesianplane">
+        <span 
+              id="point1" 
+              class="point" 
+              style=
+                "position:absolute;
+                left:@(((decimal)ViewBag.x1 / (decimal)ViewBag.boundX)*100)%; 
+                bottom:@(((decimal)ViewBag.y1 / (decimal)ViewBag.boundY)*100)%;"
+              title="Point 1 at (@ViewBag.x1, @ViewBag.y1)">
+        </span>
+        <span id="point2"
+              class="point"
+              style=
+                "position:absolute;
+                left:@(((decimal)ViewBag.x2 / (decimal)ViewBag.boundX)*100)%; 
+                bottom:@(((decimal)ViewBag.y2 / (decimal)ViewBag.boundY)*100)%;"
+              title="Point 2 at (@ViewBag.x2, @ViewBag.y2)">
+        </span>
+        <span id="Xscalelowerbound">@(ViewBag.boundX * -1)</span>
+        <span id="Xscaleupperbound">@ViewBag.boundX</span>
+        <span id="Yscalelowerbound">@(ViewBag.boundY * -1)</span>
+        <span id="Yscaleupperbound">@ViewBag.boundY</span>
+    </div>
+</section>
+
+<p>
+    quadrants
+    @ViewBag.quadrants
+    x-bound
+    @ViewBag.boundX
+    y-bound
+    @ViewBag.boundY
+
+</p>

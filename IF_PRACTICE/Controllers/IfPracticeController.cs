@@ -244,6 +244,31 @@ namespace IF_PRACTICE.Controllers
         }
 
         /// <summary>
+        /// Describes a number line which fits {val1} and {val2}.
+        /// </summary>
+        /// <param name="value 1">The first value on the scale.</param>
+        /// <param name="value 2">The second value on the scale.</param>
+        /// <returns>closest integer range from {-bound} to {+bound} comfortably containing {val1} and {val2} </returns>
+        /// <example>
+        /// GET : api/IfPractice/GetScale/-10/10
+        /// 15
+        /// </example>
+        /// <example>
+        /// GET : api/IfPractice/GetScale/-20/100
+        /// 150
+        /// </example>
+        public int GetScale(int val1, int val2)
+        {
+            int scalar1 = Math.Abs(val1);
+            int scalar2 = Math.Abs(val2);
+
+            int bound = (int)(Math.Max(scalar1, scalar2) * 1.5);
+
+            return bound;
+
+        }
+
+        /// <summary>
         /// Determines the number of quadrants that a line segment passes through
         /// NOTE: a line can only pass through up to 3 quadrants.
         /// </summary>
@@ -326,7 +351,7 @@ namespace IF_PRACTICE.Controllers
                     }
                 }
                 //Line is vertical
-                if (isLineVertical)
+                else if (isLineVertical)
                 {
                     Debug.WriteLine("Line is Vertical.");
                     //Does the line travel on exactly the x-axis?
