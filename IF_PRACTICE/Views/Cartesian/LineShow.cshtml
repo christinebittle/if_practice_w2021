@@ -5,6 +5,11 @@
 
 <h2>LineShow</h2>
 
+@{ 
+   /*This process loads info from the server and uses CSS to make a graph.*/
+   /*NOTE : This would be much easier using the <canvas> element, and providing server rendered values for JavaScript to draw the graph*/
+   /* The technique described above would be an example of both server rendering (providing data to HTML) and client rendering (JS drawing the actual graph). */
+}
 <section id="cartesiancontainer">
     <div id="cartesianplane">
         <span 
@@ -32,11 +37,7 @@
 </section>
 
 <p>
-    quadrants
+    The line traverses 
     @ViewBag.quadrants
-    x-bound
-    @ViewBag.boundX
-    y-bound
-    @ViewBag.boundY
-
+    quadrant@(ViewBag.quadrants!=1 ? "s" : "").
 </p>
