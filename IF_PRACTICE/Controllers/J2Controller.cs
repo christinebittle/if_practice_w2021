@@ -16,7 +16,16 @@ namespace IF_PRACTICE.Controllers
         /// <param name="m">A die with 'm' sides</param>
         /// <param name="goal">A goal number to reach.</param>
         /// <returns>list of {counter, iterations}. {counter} describes how many ways an n and m sided die can be rolled to a {goal}. {iterations} describes how many steps the program needed to take to find a solution.</returns>
-        [Route("api/J2/DiceGameStandard/{n}/{m}")]
+        /// <example>
+        /// GET api/J2/DiceGameStandard/6/7/13  ->  1,42
+        /// </example>
+        /// <example>
+        /// GET api/J2/DiceGameStandard/8/12/20  ->  1,96
+        /// </example>
+        /// <example>
+        /// GET api/J2/DiceGameStandard/9/4/6  ->  4,36
+        /// </example>
+        [Route("api/J2/DiceGameStandard/{n}/{m}/{goal}")]
         [HttpGet]
         public List<int> DiceGameStandard(int n, int m, int goal)
         {
@@ -45,8 +54,16 @@ namespace IF_PRACTICE.Controllers
         /// <param name="m">A die with 'm' sides</param>
         /// <param name="goal">A goal number to reach.</param>
         /// <returns>list of {counter, iterations}. {counter} describes how many ways an n and m sided die can be rolled to a {goal}. {iterations} describes how many steps the program needed to take to find a solution.</returns>
-        //optimized dice game solution
-        [Route("api/J2/DiceGameOptimized/{n}/{m}")]
+        /// <example>
+        /// GET api/J2/DiceGameStandard/6/7/4  ->  3,3
+        /// </example>
+        /// <example>
+        /// GET api/J2/DiceGameStandard/8/9/14  ->  4,4
+        /// </example>
+        /// <example>
+        /// GET api/J2/DiceGameStandard/9/4/6  ->  4,4
+        /// </example>
+        [Route("api/J2/DiceGameOptimized/{n}/{m}/{goal}")]
         [HttpGet]
         public List<int> DiceGameOptimized(int n, int m, int goal)
         {
@@ -84,17 +101,23 @@ namespace IF_PRACTICE.Controllers
         /// <param name="m">A die with 'm' sides</param>
         /// <param name="goal">A goal number to reach.</param>
         /// <returns>list of {counter, iterations}. {counter} describes how many ways an n and m sided die can be rolled to a {goal}. {iterations} describes how many steps the program needed to take to find a solution.</returns>
-        //Dice game solution in fewest possible steps.
-        [Route("api/J2/DiceGameOptimal/{n}/{m}")]
+        /// <example>
+        /// GET api/J2/DiceGameOptimal/3/2/2  ->  1,1
+        /// </example>
+        /// <example>
+        /// GET api/J2/DiceGameOptimal/4/6/8  ->  3,3
+        /// </example>
+        /// <example>
+        /// GET api/J2/DiceGameOptimal/48/48/75  ->  4,4
+        /// </example>
+        [Route("api/J2/DiceGameOptimal/{n}/{m}/{goal}")]
         [HttpGet]
         public List<int> DiceGameOptimal(int n, int m, int goal)
         {
-
+            //validation for dice game
             bool isGameValid = n > 0 && m > 0 && (m + n) >= goal;
             if (!isGameValid) return new List<int> { 0, 0 };
 
-            //checks if the combination is even possible
-            if (n + m < goal) return new List<int> { 0, 0 };
             //Start at the highest possible lower bound
             int lowerBound = Math.Max(1, (goal - m));
             //Continue until the lowest possible upper bound
