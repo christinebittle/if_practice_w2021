@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "DiceGame";
+}
+
+<h2>Dice Game</h2>
+
+<form method="POST" action="/Analysis/DiceGameResults">
+    <div>
+        <label>Number of Sides on 'n' sided die:</label>
+        <input type="text" name="n" />
+    </div>
+    <div>
+        <label>Number of Sides on 'm' sided die:</label>
+        <input type="text" name="m" />
+    </div>
+    <div>
+        <label>Goal Number to hit:</label>
+        <input type="text" name="goal" />
+    </div>
+
+    <input type="submit" />
+</form>

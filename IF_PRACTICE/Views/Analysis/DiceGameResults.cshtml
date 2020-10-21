@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "DiceGameResults";
+}
+
+<h2>Dice Game Results</h2>
+
+<table style="width:100%;">
+    <tr>
+        <th>Solution Type</th>
+        <th>Number of ways to roll 10</th>
+        <th>Algorithm Steps</th>
+    </tr>
+    <tr>
+        <th>Standard Solution</th>
+        <th>@ViewBag.StandardSolution</th>
+        <th>@ViewBag.StandardSteps</th>
+    </tr>
+    <tr>
+        <th>Optimized Solution</th>
+        <th>@ViewBag.OptimizedSolution</th>
+        <th>@ViewBag.OptimizedSteps</th>
+    </tr>
+    <tr>
+        <th>Optimal Solution</th>
+        <th>@ViewBag.OptimalSolution</th>
+        <th>@ViewBag.OptimalSteps</th>
+    </tr>
+    
+
+</table>
+<figure style="max-width:40%; margin: 0 auto;">
+    <img style="width:100%;" src="~/Content/imgs/dicegamesolutions.jpg" />
+    <figcaption>A representation of the above three solutions as a graph. X axis is the input scale (n, m, goal). Y-axis is the number of algorithm steps.</figcaption>
+</figure>

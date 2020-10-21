@@ -2,14 +2,12 @@
 @{
     ViewBag.Title = "LineShow";
 }
-
-<h2>LineShow</h2>
-
 @{ 
    /*This process loads info from the server and uses CSS to make a graph.*/
    /*NOTE : This would be much easier using the <canvas> element, and providing server rendered values for JavaScript to draw the graph*/
    /* The technique described above would be an example of both server rendering (providing data to HTML) and client rendering (JS drawing the actual graph). */
 }
+<h2>Cartesian Line Results</h2>
 <section id="cartesiancontainer">
     <div id="cartesianplane">
         <span 
@@ -36,7 +34,7 @@
     </div>
 </section>
 
-<p>
+<p style="text-align:center;">
     The line traverses 
     @ViewBag.quadrants
     quadrant@(ViewBag.quadrants!=1 ? "s" : "").
