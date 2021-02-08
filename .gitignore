@@ -3,8 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-AnalysisController.cs
-J2Controller.cs
+IF_PRACTICE/Controllers/AnalysisController.cs
+IF_PRACTICE/Controllers/J2Controller.cs
 
 # User-specific files
 *.rsuser
