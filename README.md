@@ -1,4 +1,4 @@
-# if_practice_w2021
+# if_practice_f2021
 
 List of practice questions in /Controllers/IfPracticeController.cs
 - Sum three integers
